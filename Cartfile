@@ -1,0 +1,11 @@
+github "Alamofire/Alamofire"
+github "Alamofire/AlamofireImage"
+# github "Moya/Moya"
+# github "tristanhimmelman/ObjectMapper"
+# github "realm/realm-cocoa"
+# github "ReactiveX/RxSwift" 
+# github "antitypical/Result"
+# github "RxSwiftCommunity/RxRealm"
+# github "RxSwiftCommunity/RxDataSources"
+# github "SVProgressHUD/SVProgressHUD"
+# github "ReactiveCocoa/ReactiveSwift" ~> 6.1
