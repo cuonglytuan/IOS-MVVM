@@ -6,4 +6,4 @@ jobs:
     requires: [~pr, ~commit]
     steps:
         - bundle_install: bundle install
-        - fastlane tests
+        - bundle exec fastlane tests
