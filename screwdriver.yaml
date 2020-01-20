@@ -6,4 +6,4 @@ jobs:
     requires: [~pr, ~commit]
     steps:
         - bundle_install: bundle install
-        #- build: bundle exec jekyll build --source docs --destination _site
+        - fastlane tests
