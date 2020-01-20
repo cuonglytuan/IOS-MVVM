@@ -1,8 +1,9 @@
-# Shared definition block
 shared:
-  # Source: https://hub.docker.com/r/library/buildpack-deps/
-  image: buildpack-deps
-# Job definition block
+  image: ruby:2
+
 jobs:
-  beta:
-    requires: [~commit, ~pr]
+  main:
+    requires: [~pr, ~commit]
+    steps:
+        - bundle_install: bundle install
+        #- build: bundle exec jekyll build --source docs --destination _site
