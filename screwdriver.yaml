@@ -4,9 +4,5 @@ shared:
   image: buildpack-deps
 # Job definition block
 jobs:
-  main:
+  tests:
     requires: [~pr, ~commit]
-    # Steps definition block.
-    steps:
-      - export: export GREETING="Hello, world!"
-      - hello: echo $GREETING
