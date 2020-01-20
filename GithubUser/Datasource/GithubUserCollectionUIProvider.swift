@@ -15,7 +15,6 @@ struct GithubUserCollectionUIProvider: CellUIProvider {
 //            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
 //            prepare(cell: cell)
             cell.compose(with: userInfo)
-                cell.backgroundColor = UIColor.red
             return cell
         }
         
@@ -23,6 +22,6 @@ struct GithubUserCollectionUIProvider: CellUIProvider {
     }
     
     func sizeForItem(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, indexPath: IndexPath, item: MappableObject, viewController: UIViewController) -> CGSize {
-        return CGSize(width: 60, height: 60)
+        return CGSize(width: 200, height: 200)
     }
 }

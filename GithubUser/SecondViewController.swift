@@ -53,6 +53,7 @@ class SecondViewController: UIViewController {
         collectionView?.contentInsetAdjustmentBehavior = .always
         collectionView.register(UINib(nibName: "GithubUserCollectionCell", bundle: nil), forCellWithReuseIdentifier: "githubusercollection")
         
+        collectionView.rx.setDelegate(self).disposed(by: disposeBag)
         setupDatasource()
         
         viewModel = GithubUserCollectionViewModel()
