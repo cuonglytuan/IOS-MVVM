@@ -1,4 +1,4 @@
 # Job definition block
 jobs:
-  tests:
-    requires: [~pr, ~commit]
+  beta:
+    requires: [~commit, ~pr]
