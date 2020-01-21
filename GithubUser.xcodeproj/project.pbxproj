@@ -56,6 +56,11 @@
 		C04902EC23CD7166008DBCCE /* GithubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04902EB23CD7166008DBCCE /* GithubUser.swift */; };
 		C099997823D6A95F004362EE /* GithubTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099997723D6A95F004362EE /* GithubTabBarController.swift */; };
 		C099997A23D6AD2E004362EE /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099997923D6AD2E004362EE /* UIViewExtension.swift */; };
+		C099998123D6D36F004362EE /* UserList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C099998023D6D36F004362EE /* UserList.storyboard */; };
+		C099998423D6D396004362EE /* UserPager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C099998223D6D396004362EE /* UserPager.storyboard */; };
+		C099998B23D6E324004362EE /* MenuTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099998923D6E324004362EE /* MenuTabCollectionViewCell.swift */; };
+		C099998C23D6E324004362EE /* MenuTabCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C099998A23D6E324004362EE /* MenuTabCollectionViewCell.xib */; };
+		C099998E23D6E7E9004362EE /* MenuTabCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099998D23D6E7E9004362EE /* MenuTabCollectionViewModel.swift */; };
 		C0A5CB8823CD78B30097DAFA /* RequestQueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A5CB8723CD78B30097DAFA /* RequestQueueManager.swift */; };
 		C0A5CB8B23CD7A0B0097DAFA /* DispatchQueueExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A5CB8A23CD7A0B0097DAFA /* DispatchQueueExtensions.swift */; };
 		C0A5CB8E23CDA5F10097DAFA /* GithubUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A5CB8D23CDA5F10097DAFA /* GithubUserViewModel.swift */; };
@@ -134,6 +139,11 @@
 		C04902EB23CD7166008DBCCE /* GithubUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUser.swift; sourceTree = "<group>"; };
 		C099997723D6A95F004362EE /* GithubTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTabBarController.swift; sourceTree = "<group>"; };
 		C099997923D6AD2E004362EE /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		C099998023D6D36F004362EE /* UserList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserList.storyboard; sourceTree = "<group>"; };
+		C099998323D6D396004362EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = GithubUser/Base.lproj/UserPager.storyboard; sourceTree = "<group>"; };
+		C099998923D6E324004362EE /* MenuTabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabCollectionViewCell.swift; sourceTree = "<group>"; };
+		C099998A23D6E324004362EE /* MenuTabCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTabCollectionViewCell.xib; sourceTree = "<group>"; };
+		C099998D23D6E7E9004362EE /* MenuTabCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabCollectionViewModel.swift; sourceTree = "<group>"; };
 		C0A5CB8723CD78B30097DAFA /* RequestQueueManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestQueueManager.swift; sourceTree = "<group>"; };
 		C0A5CB8A23CD7A0B0097DAFA /* DispatchQueueExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueExtensions.swift; sourceTree = "<group>"; };
 		C0A5CB8D23CDA5F10097DAFA /* GithubUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUserViewModel.swift; sourceTree = "<group>"; };
@@ -270,13 +280,9 @@
 				C00015A623C70D1100B16397 /* Repository */,
 				C01462A323C443AE004389E4 /* AppDelegate.swift */,
 				C01462A523C443AE004389E4 /* SceneDelegate.swift */,
-				C01462A723C443AE004389E4 /* FirstViewController.swift */,
-				C01462A923C443AE004389E4 /* SecondViewController.swift */,
-				C01462AB23C443AE004389E4 /* Main.storyboard */,
 				C01462AE23C443AF004389E4 /* Assets.xcassets */,
 				C01462B023C443AF004389E4 /* LaunchScreen.storyboard */,
 				C01462B323C443AF004389E4 /* Info.plist */,
-				C099997723D6A95F004362EE /* GithubTabBarController.swift */,
 			);
 			path = GithubUser;
 			sourceTree = "<group>";
@@ -303,6 +309,12 @@
 		C02DECA723CECB92009ABBEB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C099997723D6A95F004362EE /* GithubTabBarController.swift */,
+				C01462A723C443AE004389E4 /* FirstViewController.swift */,
+				C01462A923C443AE004389E4 /* SecondViewController.swift */,
+				C01462AB23C443AE004389E4 /* Main.storyboard */,
+				C099998223D6D396004362EE /* UserPager.storyboard */,
+				C099998023D6D36F004362EE /* UserList.storyboard */,
 				C02DECA823CECB9E009ABBEB /* Cell */,
 			);
 			path = View;
@@ -315,6 +327,8 @@
 				C02DECB223CF1AA0009ABBEB /* GithubUserCell.xib */,
 				C02536E123D1909E000E9C1B /* GithubUserCollectionCell.xib */,
 				C02536E323D1914E000E9C1B /* GithubUserCollectionCell.swift */,
+				C099998923D6E324004362EE /* MenuTabCollectionViewCell.swift */,
+				C099998A23D6E324004362EE /* MenuTabCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -354,6 +368,7 @@
 			children = (
 				C0A5CB8D23CDA5F10097DAFA /* GithubUserViewModel.swift */,
 				C027F80923D0670D00653D1F /* GithubUserCollectionViewModel.swift */,
+				C099998D23D6E7E9004362EE /* MenuTabCollectionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -464,8 +479,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C01462B223C443AF004389E4 /* LaunchScreen.storyboard in Resources */,
+				C099998C23D6E324004362EE /* MenuTabCollectionViewCell.xib in Resources */,
+				C099998423D6D396004362EE /* UserPager.storyboard in Resources */,
 				C02DECB323CF1AA0009ABBEB /* GithubUserCell.xib in Resources */,
 				C01462AF23C443AF004389E4 /* Assets.xcassets in Resources */,
+				C099998123D6D36F004362EE /* UserList.storyboard in Resources */,
 				C01462AD23C443AE004389E4 /* Main.storyboard in Resources */,
 				C02536E223D1909E000E9C1B /* GithubUserCollectionCell.xib in Resources */,
 			);
@@ -539,12 +557,14 @@
 				C00780DD23C82A8E001C07EE /* DatabaseManagerExtensions.swift in Sources */,
 				C01462A823C443AE004389E4 /* FirstViewController.swift in Sources */,
 				C02DECB123CEFE26009ABBEB /* GithubUserTableUIProvider.swift in Sources */,
+				C099998E23D6E7E9004362EE /* MenuTabCollectionViewModel.swift in Sources */,
 				C0A5CB8E23CDA5F10097DAFA /* GithubUserViewModel.swift in Sources */,
 				C02536E023D1510A000E9C1B /* CellUIProvider.swift in Sources */,
 				C027F80823D0608600653D1F /* GithubUserCollectionUIProvider.swift in Sources */,
 				C04902E123CD58C4008DBCCE /* GithubUserRepository.swift in Sources */,
 				C00015A823C70D4B00B16397 /* DatabaseManager.swift in Sources */,
 				C04902E623CD5C42008DBCCE /* EndpointType.swift in Sources */,
+				C099998B23D6E324004362EE /* MenuTabCollectionViewCell.swift in Sources */,
 				C01462A423C443AE004389E4 /* AppDelegate.swift in Sources */,
 				C027F80A23D0670D00653D1F /* GithubUserCollectionViewModel.swift in Sources */,
 				C02DECAC23CECD5B009ABBEB /* GithubUserCell.swift in Sources */,
@@ -606,6 +626,14 @@
 				C01462B123C443AF004389E4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C099998223D6D396004362EE /* UserPager.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C099998323D6D396004362EE /* Base */,
+			);
+			name = UserPager.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

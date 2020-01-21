@@ -15,34 +15,20 @@ class SecondViewController: UIViewController {
     let disposeBag = DisposeBag()
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var menuTabCollectionView: UICollectionView!
     
     var dataSource: RxCollectionViewSectionedReloadDataSource<GithubUserSectionModel>!
+    var menuTabDataSource: RxCollectionViewSectionedReloadDataSource<GithubUserSectionModel>!
     
     var viewModel: GithubUserCollectionViewModel! {
         didSet {
             viewModel.sections.bind(to: collectionView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
-            
-//            viewModel.sections.subscribe({ [weak self] _ in
-//                guard let strongSelf = self else {
-//                    return
-//                }
-//                let selectedIndex = min(strongSelf.viewModel.selectedIndex.value, strongSelf.viewModel.pages.value.count - 1)
-//                strongSelf.viewModel.selectedIndex.accept(selectedIndex)
-//            }).disposed(by: disposeBag)
-            
-//            viewModel.selectedIndex.subscribe(onNext: { [weak self] page in
-//                self?.collectionView.reloadData()
-//                if let numberOfItems = self?.collectionView.numberOfItems(inSection: 0), page < numberOfItems {
-//                    self?.collectionView.scrollToItem(at: IndexPath(row: page, section: 0), at: .centeredHorizontally, animated: true)
-//                }
-//            }).disposed(by: disposeBag)
-//            pageVC?.set(viewModel: viewModel)
-//
-//            viewModel.isTabsUserInteractionEnabled
-//                .subscribe(onNext: { [weak self] isEnable in
-//                    self?.collectionView.isScrollEnabled = isEnable
-//                })
-//                .disposed(by: disposeBag)
+        }
+    }
+    
+    var menuTabViewModel: MenuTabCollectionViewModel! {
+        didSet {
+            menuTabViewModel.sections.bind(to: menuTabCollectionView.rx.items(dataSource: menuTabDataSource)).disposed(by: disposeBag)
         }
     }
     
@@ -58,12 +44,35 @@ class SecondViewController: UIViewController {
         
         viewModel = GithubUserCollectionViewModel()
         
+        menuTabCollectionView?.contentInsetAdjustmentBehavior = .always
+        menuTabCollectionView.register(UINib(nibName: "MenuTabCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "menutab")
+        
+        menuTabCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
+        menuTabDataSource = RxCollectionViewSectionedReloadDataSource<GithubUserSectionModel>(
+            configureCell: { [weak self] menuTabDataSource, collection, idxPath, item in
+                guard let `self` = self else { return UICollectionViewCell() }
+                let cellUIProvider = menuTabDataSource.sectionModels[idxPath.section].cellUIProvider
+                return cellUIProvider.cell(for: collection, indexPath: idxPath, item: item, viewController: self)
+            }
+        )
+        
+        menuTabViewModel = MenuTabCollectionViewModel()
+        
         viewModel.hasResults
             .subscribe(onNext: { [weak self] hasUser in
                 //self?.emptyLabel.isHidden = hasUser
                 let isLoading = self?.viewModel.isLoading.value ?? false
                 if !isLoading {
                     self?.collectionView.reloadData()
+                }
+            }).disposed(by: disposeBag)
+        
+        menuTabViewModel.hasResults
+            .subscribe(onNext: { [weak self] hasUser in
+                //self?.emptyLabel.isHidden = hasUser
+                let isLoading = self?.menuTabViewModel.isLoading.value ?? false
+                if !isLoading {
+                    self?.menuTabCollectionView.reloadData()
                 }
             }).disposed(by: disposeBag)
     }
@@ -87,4 +96,20 @@ extension SecondViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+
+struct MenuTabCellUIProvider: CellUIProvider {
+    let heightTabIconCategoryType = CGFloat(10)
+    let heightTabIconSearchType = CGFloat(14)
+    
+    func cell(for collectionView: UICollectionView, indexPath: IndexPath, item: MappableObject, viewController: UIViewController) -> UICollectionViewCell {
+        if let userInfo = item as? GithubUser, let vc = viewController as? SecondViewController {
+            let vm = vc.viewModel
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menutab", for: indexPath) as! MenuTabCollectionViewCell
+            return cell
+        }
+
+        return UICollectionViewCell()
+        
+    }
+}
 
