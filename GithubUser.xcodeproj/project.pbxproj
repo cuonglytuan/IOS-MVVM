@@ -54,6 +54,8 @@
 		C04902E823CD65E4008DBCCE /* githubuser.json in Resources */ = {isa = PBXBuildFile; fileRef = C04902E723CD65E4008DBCCE /* githubuser.json */; };
 		C04902EA23CD6CEC008DBCCE /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04902E923CD6CEC008DBCCE /* RequestService.swift */; };
 		C04902EC23CD7166008DBCCE /* GithubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04902EB23CD7166008DBCCE /* GithubUser.swift */; };
+		C099997823D6A95F004362EE /* GithubTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099997723D6A95F004362EE /* GithubTabBarController.swift */; };
+		C099997A23D6AD2E004362EE /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099997923D6AD2E004362EE /* UIViewExtension.swift */; };
 		C0A5CB8823CD78B30097DAFA /* RequestQueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A5CB8723CD78B30097DAFA /* RequestQueueManager.swift */; };
 		C0A5CB8B23CD7A0B0097DAFA /* DispatchQueueExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A5CB8A23CD7A0B0097DAFA /* DispatchQueueExtensions.swift */; };
 		C0A5CB8E23CDA5F10097DAFA /* GithubUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A5CB8D23CDA5F10097DAFA /* GithubUserViewModel.swift */; };
@@ -130,6 +132,8 @@
 		C04902E723CD65E4008DBCCE /* githubuser.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = githubuser.json; sourceTree = "<group>"; };
 		C04902E923CD6CEC008DBCCE /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
 		C04902EB23CD7166008DBCCE /* GithubUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUser.swift; sourceTree = "<group>"; };
+		C099997723D6A95F004362EE /* GithubTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTabBarController.swift; sourceTree = "<group>"; };
+		C099997923D6AD2E004362EE /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		C0A5CB8723CD78B30097DAFA /* RequestQueueManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestQueueManager.swift; sourceTree = "<group>"; };
 		C0A5CB8A23CD7A0B0097DAFA /* DispatchQueueExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueExtensions.swift; sourceTree = "<group>"; };
 		C0A5CB8D23CDA5F10097DAFA /* GithubUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUserViewModel.swift; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 				C01462AE23C443AF004389E4 /* Assets.xcassets */,
 				C01462B023C443AF004389E4 /* LaunchScreen.storyboard */,
 				C01462B323C443AF004389E4 /* Info.plist */,
+				C099997723D6A95F004362EE /* GithubTabBarController.swift */,
 			);
 			path = GithubUser;
 			sourceTree = "<group>";
@@ -339,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				C0A5CB8A23CD7A0B0097DAFA /* DispatchQueueExtensions.swift */,
+				C099997923D6AD2E004362EE /* UIViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -547,8 +553,10 @@
 				C0A5CB8B23CD7A0B0097DAFA /* DispatchQueueExtensions.swift in Sources */,
 				C02DECAF23CEFC6C009ABBEB /* GithubUserSectionModel.swift in Sources */,
 				C04902EA23CD6CEC008DBCCE /* RequestService.swift in Sources */,
+				C099997A23D6AD2E004362EE /* UIViewExtension.swift in Sources */,
 				C01462A623C443AE004389E4 /* SceneDelegate.swift in Sources */,
 				C02536E423D1914E000E9C1B /* GithubUserCollectionCell.swift in Sources */,
+				C099997823D6A95F004362EE /* GithubTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
