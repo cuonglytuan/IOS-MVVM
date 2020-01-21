@@ -10,6 +10,9 @@ pool:
   vmImage: 'macos-latest'
 
 steps:
+- script: carthage update --platform iOS
+  env:
+    GITHUB_ACCESS_TOKEN: aa2f6ea087600c775ebedc5f70950fed300b3231
 - task: Xcode@5
   inputs:
     actions: 'build'
