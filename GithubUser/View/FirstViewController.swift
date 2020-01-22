@@ -13,6 +13,11 @@ import RxDataSources
 
 class FirstViewController: UIViewController {
     
+    var needsRefreshControl = true
+    var needsLoadMore = true
+    
+    let isRefreshing = BehaviorRelay<Bool>(value: false)
+    
     let disposeBag = DisposeBag()
     
     @IBOutlet weak var tableView: UITableView!
@@ -45,6 +50,7 @@ class FirstViewController: UIViewController {
         
         self.tableView.isEditing = false
         self.tableView.register(UINib(nibName: "GithubUserCell", bundle: nil), forCellReuseIdentifier: "githubuser")
+        tableView.register(LoadingTableViewCell.nib(), forCellReuseIdentifier: LoadingTableViewCell.cellID)
         
         setupDatasource()
         
@@ -103,6 +109,12 @@ class FirstViewController: UIViewController {
                     return cellUIProvider.titleForHeaderInSection(section, viewController: self)
                 }
             )
+        }
+    }
+    
+    func triggerLoadMore() {
+        if needsLoadMore {
+            viewModel.loadNextPageTrigger.accept(true)
         }
     }
 }

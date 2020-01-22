@@ -24,10 +24,10 @@ enum TableViewEditingCommand {
 class GithubUserViewModel {
     
     let sections = BehaviorRelay<[GithubUserSectionModel]>(value: [])
-    let isLoading = BehaviorRelay<Bool>(value: true)
+    let isLoading = BehaviorRelay<Bool>(value: false)
     let disposeBag = DisposeBag()
     
-    var nextPage = 1
+    var nextID = 0
     var hasNextPage = BehaviorRelay<Bool>(value: true)
     let hasResults = BehaviorRelay<Bool>(value: true)
     
@@ -115,7 +115,7 @@ class GithubUserViewModel {
     }
     
     func getLoadingObserver() -> PrimitiveSequence<SingleTrait, Page> {
-        return GithubUserRepository.fetchGithubUser(since: 0, pageSize: 20)
+        return GithubUserRepository.fetchGithubUser(since: nextID, pageSize: 20)
             .do(onError: { error in
 
             })
@@ -141,18 +141,18 @@ class GithubUserViewModel {
         
         getLoadingObserver()
             .subscribe(
-                onSuccess: { [weak self] nextPage in self?.loadCompleted(with: nextPage) },
+                onSuccess: { [weak self] nextID in self?.loadCompleted(with: nextID) },
                 onError: { [weak self] error in self?.loadFailed(with: error) }
             )
             .disposed(by: disposeBag)
     }
     
-    func loadCompleted(with nextPage: Int) {
-        hasNextPage.accept(nextPage > 0)
+    func loadCompleted(with nextID: Int) {
+        hasNextPage.accept(nextID > 0)
         delay(0.15) { [weak self] in
             guard let strongSelf = self else { return }
             
-            strongSelf.nextPage = nextPage
+            strongSelf.nextID = nextID
             strongSelf.isLoading.accept(false)
         }
     }
@@ -171,7 +171,7 @@ class GithubUserViewModel {
     }
     
     func reload() {
-        nextPage = 1
+        nextID = 1
         hasNextPage.accept(true)
         load()
     }

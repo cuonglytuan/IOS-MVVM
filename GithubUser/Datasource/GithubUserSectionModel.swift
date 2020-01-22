@@ -41,9 +41,13 @@ extension GithubUserSectionModel: AnimatableSectionModelType {
     static func sectionsFrom(_ sectionModels: GithubUserSectionModel..., includeLoading: Bool) -> [GithubUserSectionModel] {
         var sections = [GithubUserSectionModel](sectionModels)
         
-//        if includeLoading {
-//            sections.append(loadingSectionModel())
-//        }
+        if includeLoading {
+            sections.append(loadingSectionModel())
+        }
         return sections
+    }
+    
+    static func loadingSectionModel(objects: [PlaceholderObject] = [PlaceholderObject()], sectionName: String = LoadingTableViewCell.cellID) -> GithubUserSectionModel {
+        return GithubUserSectionModel(objects: objects, sectionName: sectionName, cellUIProvider: LoadingCellUIProvider())
     }
 }

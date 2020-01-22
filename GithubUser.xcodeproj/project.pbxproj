@@ -54,6 +54,8 @@
 		C04902E823CD65E4008DBCCE /* githubuser.json in Resources */ = {isa = PBXBuildFile; fileRef = C04902E723CD65E4008DBCCE /* githubuser.json */; };
 		C04902EA23CD6CEC008DBCCE /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04902E923CD6CEC008DBCCE /* RequestService.swift */; };
 		C04902EC23CD7166008DBCCE /* GithubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04902EB23CD7166008DBCCE /* GithubUser.swift */; };
+		C067192623D7FD80002E2693 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C067192423D7FD80002E2693 /* LoadingTableViewCell.swift */; };
+		C067192723D7FD80002E2693 /* LoadingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C067192523D7FD80002E2693 /* LoadingTableViewCell.xib */; };
 		C099997823D6A95F004362EE /* GithubTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099997723D6A95F004362EE /* GithubTabBarController.swift */; };
 		C099997A23D6AD2E004362EE /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C099997923D6AD2E004362EE /* UIViewExtension.swift */; };
 		C099998123D6D36F004362EE /* UserList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C099998023D6D36F004362EE /* UserList.storyboard */; };
@@ -137,6 +139,8 @@
 		C04902E723CD65E4008DBCCE /* githubuser.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = githubuser.json; sourceTree = "<group>"; };
 		C04902E923CD6CEC008DBCCE /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
 		C04902EB23CD7166008DBCCE /* GithubUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUser.swift; sourceTree = "<group>"; };
+		C067192423D7FD80002E2693 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
+		C067192523D7FD80002E2693 /* LoadingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingTableViewCell.xib; sourceTree = "<group>"; };
 		C099997723D6A95F004362EE /* GithubTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTabBarController.swift; sourceTree = "<group>"; };
 		C099997923D6AD2E004362EE /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		C099998023D6D36F004362EE /* UserList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserList.storyboard; sourceTree = "<group>"; };
@@ -329,6 +333,8 @@
 				C02536E323D1914E000E9C1B /* GithubUserCollectionCell.swift */,
 				C099998923D6E324004362EE /* MenuTabCollectionViewCell.swift */,
 				C099998A23D6E324004362EE /* MenuTabCollectionViewCell.xib */,
+				C067192423D7FD80002E2693 /* LoadingTableViewCell.swift */,
+				C067192523D7FD80002E2693 /* LoadingTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -481,6 +487,7 @@
 				C01462B223C443AF004389E4 /* LaunchScreen.storyboard in Resources */,
 				C099998C23D6E324004362EE /* MenuTabCollectionViewCell.xib in Resources */,
 				C099998423D6D396004362EE /* UserPager.storyboard in Resources */,
+				C067192723D7FD80002E2693 /* LoadingTableViewCell.xib in Resources */,
 				C02DECB323CF1AA0009ABBEB /* GithubUserCell.xib in Resources */,
 				C01462AF23C443AF004389E4 /* Assets.xcassets in Resources */,
 				C099998123D6D36F004362EE /* UserList.storyboard in Resources */,
@@ -572,6 +579,7 @@
 				C04902EC23CD7166008DBCCE /* GithubUser.swift in Sources */,
 				C0A5CB8B23CD7A0B0097DAFA /* DispatchQueueExtensions.swift in Sources */,
 				C02DECAF23CEFC6C009ABBEB /* GithubUserSectionModel.swift in Sources */,
+				C067192623D7FD80002E2693 /* LoadingTableViewCell.swift in Sources */,
 				C04902EA23CD6CEC008DBCCE /* RequestService.swift in Sources */,
 				C099997A23D6AD2E004362EE /* UIViewExtension.swift in Sources */,
 				C01462A623C443AE004389E4 /* SceneDelegate.swift in Sources */,

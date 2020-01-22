@@ -25,7 +25,8 @@ struct GithubUserRepository {
             .do(onSuccess: {
                 let listUsers = $0
                 if since == 0 {
-                    MappableObject.markDeletedInApp(cacheObjects: listUsers)
+                    let cachedQuestions = githubUser().toArray()
+                    MappableObject.markDeletedInApp(cacheObjects: cachedQuestions)
                 }
                 DatabaseManager.write(listUsers)
             }, onError: { error in
@@ -35,14 +36,19 @@ struct GithubUserRepository {
             })
             .flatMap { response -> Single<Page> in
                 return Single<Page>.create { single in
-                    single(.success(0))
+                    single(.success(response.last?.id ?? 0))
                     return Disposables.create()
                 }
             }
     }
     
     static func githubUser() -> Results<GithubUser> {
-        let users = DatabaseManager.shared.realm.objects(GithubUser.self).sorted(byKeyPath: "id", ascending: false)
+        let users = DatabaseManager.shared.realm.objects(GithubUser.self).filter("isDeleted == false").sorted(byKeyPath: "id", ascending: false)
         return users
+    }
+    
+    static func deleteInvalidated() {
+        let deleted = DatabaseManager.shared.realm.objects(GithubUser.self).filter("isDeleted == true")
+        DatabaseManager.delete(deleted.toArray())
     }
 }
