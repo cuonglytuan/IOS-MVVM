@@ -24,7 +24,7 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var emptyLabel: UILabel!
     
     var isAnimated = true
-    var viewTransition = RxDataSources.ViewTransition.animated
+    var viewTransition = RxDataSources.ViewTransition.reload
     
     var dataSource: RxTableViewSectionedReloadDataSource<GithubUserSectionModel>!
     var animatedDataSource: RxTableViewSectionedAnimatedDataSource<GithubUserSectionModel>!
@@ -41,6 +41,8 @@ class FirstViewController: UIViewController {
             } else {
                 viewModel.sections.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
             }
+            
+            setupRefreshControl()
         }
     }
 
@@ -63,6 +65,16 @@ class FirstViewController: UIViewController {
                     self?.tableView.reloadData()
                 }
             }).disposed(by: disposeBag)
+    }
+    
+    func endRefreshing() {
+        tableView.refreshControl?.endRefreshing()
+        
+        if tableView.refreshControl?.isHidden ?? false {
+            return
+        }
+        
+        tableView.setContentOffset(CGPoint(x: 0, y: -tableView.adjustedContentInset.top), animated: true)
     }
     
     private func setupDatasource() {
@@ -116,5 +128,34 @@ class FirstViewController: UIViewController {
         if needsLoadMore {
             viewModel.loadNextPageTrigger.accept(true)
         }
+    }
+    
+    func setupRefreshControl() {
+        let tableView = self.tableView!
+        
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.rx.controlEvent(.valueChanged)
+            .filter { tableView.refreshControl!.isRefreshing }
+            .bind(onNext: { [weak self] _ in
+                self?.isRefreshing.accept(true)
+                self?.startRefreshTimer()
+                self?.refresh()
+            })
+            .disposed(by: disposeBag)
+        
+        Observable.combineLatest(viewModel.isLoading, isRefreshing)
+            .filter { (isLoading, isRefreshing) in !isLoading && !isRefreshing }
+            .subscribe(onNext: { [weak self] _ in self?.endRefreshing() })
+            .disposed(by: disposeBag)
+    }
+    
+    private func startRefreshTimer() {
+        delay(2.0) { [weak self] in
+            self?.isRefreshing.accept(false)
+        }
+    }
+    
+    private func refresh() {
+        viewModel.reload()
     }
 }

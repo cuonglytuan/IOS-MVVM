@@ -43,7 +43,7 @@ struct GithubUserRepository {
     }
     
     static func githubUser() -> Results<GithubUser> {
-        let users = DatabaseManager.shared.realm.objects(GithubUser.self).filter("isDeleted == false").sorted(byKeyPath: "id", ascending: false)
+        let users = DatabaseManager.shared.realm.objects(GithubUser.self).filter("isDeleted == false").sorted(byKeyPath: "id", ascending: true)
         return users
     }
     

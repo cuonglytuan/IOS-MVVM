@@ -171,7 +171,7 @@ class GithubUserViewModel {
     }
     
     func reload() {
-        nextID = 1
+        nextID = 0
         hasNextPage.accept(true)
         load()
     }
