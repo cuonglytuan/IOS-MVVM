@@ -30,6 +30,13 @@
 		C000161523C7156300B16397 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C00015C923C713EC00B16397 /* RxSwift.framework */; };
 		C000161923C7156400B16397 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C00015CB23C713EC00B16397 /* SVProgressHUD.framework */; };
 		C00780DD23C82A8E001C07EE /* DatabaseManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00780DC23C82A8E001C07EE /* DatabaseManagerExtensions.swift */; };
+		C012837623E2DA4400428ADD /* GithubUserViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C012837323E2DA4400428ADD /* GithubUserViewModelTest.swift */; };
+		C012837723E2DA4400428ADD /* GithubUserSectionModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C012837523E2DA4400428ADD /* GithubUserSectionModelTest.swift */; };
+		C012837823E2DB3C00428ADD /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C00015CF23C713EC00B16397 /* Moya.framework */; };
+		C012837923E2DB3C00428ADD /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C00015C423C713EB00B16397 /* RxBlocking.framework */; };
+		C012837A23E2DB3C00428ADD /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C00015CD23C713EC00B16397 /* RxCocoa.framework */; };
+		C012837B23E2DB3C00428ADD /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C00015D023C713EC00B16397 /* RxMoya.framework */; };
+		C012837D23E2DB3C00428ADD /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C012837C23E2DB3C00428ADD /* RxTest.framework */; };
 		C01462A423C443AE004389E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01462A323C443AE004389E4 /* AppDelegate.swift */; };
 		C01462A623C443AE004389E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01462A523C443AE004389E4 /* SceneDelegate.swift */; };
 		C01462A823C443AE004389E4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01462A723C443AE004389E4 /* FirstViewController.swift */; };
@@ -109,6 +116,9 @@
 		C00015D023C713EC00B16397 /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/iOS/RxMoya.framework; sourceTree = "<group>"; };
 		C00015D123C713EC00B16397 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		C00780DC23C82A8E001C07EE /* DatabaseManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManagerExtensions.swift; sourceTree = "<group>"; };
+		C012837323E2DA4400428ADD /* GithubUserViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubUserViewModelTest.swift; sourceTree = "<group>"; };
+		C012837523E2DA4400428ADD /* GithubUserSectionModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubUserSectionModelTest.swift; sourceTree = "<group>"; };
+		C012837C23E2DB3C00428ADD /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		C01462A023C443AE004389E4 /* GithubUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01462A323C443AE004389E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C01462A523C443AE004389E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +193,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C012837D23E2DB3C00428ADD /* RxTest.framework in Frameworks */,
+				C012837823E2DB3C00428ADD /* Moya.framework in Frameworks */,
+				C012837923E2DB3C00428ADD /* RxBlocking.framework in Frameworks */,
+				C012837A23E2DB3C00428ADD /* RxCocoa.framework in Frameworks */,
+				C012837B23E2DB3C00428ADD /* RxMoya.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +226,7 @@
 		C00015A923C70DFC00B16397 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C012837C23E2DB3C00428ADD /* RxTest.framework */,
 				C00015C523C713EB00B16397 /* Alamofire.framework */,
 				C00015C323C713EB00B16397 /* AlamofireImage.framework */,
 				C00015CC23C713EC00B16397 /* Differentiator.framework */,
@@ -250,6 +266,22 @@
 				C0A5CB8723CD78B30097DAFA /* RequestQueueManager.swift */,
 			);
 			path = Lib;
+			sourceTree = "<group>";
+		};
+		C012837223E2DA4400428ADD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C012837323E2DA4400428ADD /* GithubUserViewModelTest.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C012837423E2DA4400428ADD /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				C012837523E2DA4400428ADD /* GithubUserSectionModelTest.swift */,
+			);
+			path = Datasource;
 			sourceTree = "<group>";
 		};
 		C014629723C443AE004389E4 = {
@@ -294,6 +326,8 @@
 		C01462BB23C443B0004389E4 /* GithubUserTests */ = {
 			isa = PBXGroup;
 			children = (
+				C012837423E2DA4400428ADD /* Datasource */,
+				C012837223E2DA4400428ADD /* ViewModel */,
 				C01462BC23C443B0004389E4 /* GithubUserTests.swift */,
 				C01462BE23C443B0004389E4 /* Info.plist */,
 				C04902E723CD65E4008DBCCE /* githubuser.json */,
@@ -407,6 +441,7 @@
 				C01462B423C443B0004389E4 /* Sources */,
 				C01462B523C443B0004389E4 /* Frameworks */,
 				C01462B623C443B0004389E4 /* Resources */,
+				C012837E23E2DB6500428ADD /* Carthage Script */,
 			);
 			buildRules = (
 			);
@@ -549,6 +584,27 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
+		C012837E23E2DB6500428ADD /* Carthage Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+			);
+			name = "Carthage Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -592,6 +648,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C012837723E2DA4400428ADD /* GithubUserSectionModelTest.swift in Sources */,
+				C012837623E2DA4400428ADD /* GithubUserViewModelTest.swift in Sources */,
 				C01462BD23C443B0004389E4 /* GithubUserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -809,6 +867,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GithubUserTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -830,6 +892,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GithubUserTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
